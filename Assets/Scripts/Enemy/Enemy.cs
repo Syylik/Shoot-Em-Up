@@ -29,6 +29,8 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
+        if(Pause.Instance.isPaused) return;
+
         if(_isMovingToSpawn)
         {
             transform.position = Vector2.MoveTowards(transform.position, _afterSpawnPoint.position, _speed * Time.deltaTime);

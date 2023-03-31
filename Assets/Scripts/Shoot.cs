@@ -16,6 +16,7 @@ public class Shoot : MonoBehaviour
 
     private void Update()
     {
+        if(Pause.Instance.isPaused) return;
         if(isShooting && canShoot) Shot(); 
         shootTime -= Time.deltaTime;
     }

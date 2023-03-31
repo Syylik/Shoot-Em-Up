@@ -236,7 +236,7 @@ TextureImporter:
         height: 10
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 4, y: 0, z: 4, w: 0}
+      border: {x: 4, y: 4, z: 4, w: 4}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -668,7 +668,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GUI_25
+      name: but
       rect:
         serializedVersion: 2
         x: 145
@@ -810,27 +810,6 @@ TextureImporter:
       bones: []
       spriteID: 8ca01e6fb03a0324d959d5828d9a86d2
       internalID: -1831502902
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GUI_84
-      rect:
-        serializedVersion: 2
-        x: 82
-        y: 50
-        width: 44
-        height: 12
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3e54270c88593284ebca9184d9057059
-      internalID: -1341777340
       vertices: []
       indices: 
       edges: []
@@ -1108,6 +1087,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: buttSelection
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 159
+        width: 44
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 5, y: 5, z: 5, w: 5}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43637388f0168074fa3fa1bc4afe298e
+      internalID: 1906734628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -1139,6 +1139,8 @@ TextureImporter:
       GUI_93: 1271237832
       butt: 1897006552
       label: -909868791
+      but: 817925062
+      buttSelection: 1906734628
       GUI_52: 1935275950
       GUI_8: 1412838207
       GUI_58: 1560691940
@@ -1163,7 +1165,6 @@ TextureImporter:
       GUI_46: 256751838
       GUI_86: -422552611
       butt3: 833827783
-      GUI_25: 147280027
       GUI_84: 354408102
       GUI_4: 1477773371
       heart: -1531633305

@@ -5,17 +5,19 @@ using UnityEngine.Events;
 
 public class EnemyCreator : MonoBehaviour
 {
-    [SerializeField] private GameControl _enemyControl;
     [SerializeField] private Enemy _enemyPrefab;
     [SerializeField] private List<Transform> _spawnPoses;
     [SerializeField] private float _timeBtwSpawn;
+    private GameControl _enemyControl;
 
-    private void Start() => SpawnEnemies(5);
+    private void Awake() => _enemyControl = GameControl.Instance;
 
     public void SpawnEnemies(int num) => StartCoroutine(SpawnEnemiesRoutine(num));
 
     private IEnumerator SpawnEnemiesRoutine(int num)
     {
+        while(Pause.Instance.isPaused) yield return null;
+
         if(num > _spawnPoses.Count) num = _spawnPoses.Count;
         _enemyControl.SetEnemyCount(num);
         var spawnPoses = new List<Transform>();

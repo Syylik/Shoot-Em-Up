@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Movement), typeof(Shoot), typeof(Health))]
 public class Player : MonoBehaviour
@@ -7,38 +8,33 @@ public class Player : MonoBehaviour
     private Shoot _playerShoot;
     private PlayerUI _playerUI;
     private PlayerHealth _playerHealth;
-    private PlayerInput _input;
+
+    private Input _input;
 
     internal Animator _anim;
 
-    private void Awake()
+    private void Awake() => Init();
+
+    private void Init()
     {
-        _input = new PlayerInput();
+        _input = InputSystem.input;
         _playerMove = GetComponent<Movement>();
         _playerShoot = GetComponent<Shoot>();
         _playerHealth = GetComponent<PlayerHealth>();
         _playerUI = GetComponent<PlayerUI>();
         _anim = GetComponent<Animator>();
-    }
 
-    private void OnEnable()
-    {
-        _input.Enable();
+        _playerHealth.OnDie.AddListener(GameControl.Instance.Loose);
     }
 
     private void Start()
     {
-        _input.Main.Fire.performed += context => _playerShoot.ShootState(true);
-        _input.Main.Fire.canceled += context => _playerShoot.ShootState(false);
+        _input.Game.Fire.performed += context => _playerShoot.ShootState(true);
+        _input.Game.Fire.canceled += context => _playerShoot.ShootState(false);
     }
 
     private void Update()
     {
-        _playerMove.Move(_input.Main.Move.ReadValue<Vector2>());
-    }
-
-    private void OnDisable()
-    {
-        _input.Disable();
+        _playerMove.moveDirection = _input.Game.Move.ReadValue<Vector2>();
     }
 }

@@ -1,8 +1,8 @@
 {
-    "name": "PlayerInput",
+    "name": "Input",
     "maps": [
         {
-            "name": "Main",
+            "name": "Game",
             "id": "3d928990-199a-490e-90d7-f33f0f401fbc",
             "actions": [
                 {
@@ -49,17 +49,17 @@
                 },
                 {
                     "name": "",
-                    "id": "d9b4cf43-e68d-4b41-82e9-4c8cedc9bb32",
-                    "path": "<Gamepad>/leftStick",
+                    "id": "e86a6ad4-2626-408c-9c3e-a6148f9a90f2",
+                    "path": "<Touchscreen>/Press",
                     "interactions": "",
-                    "processors": "StickDeadzone(min=0.35)",
-                    "groups": "GamepadAlternative",
-                    "action": "Move",
+                    "processors": "",
+                    "groups": "Mobile",
+                    "action": "Fire",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "2D Vector",
+                    "name": "WASD",
                     "id": "fb0014a4-c94a-4b52-ae92-55c97b8ace65",
                     "path": "2DVector(mode=2)",
                     "interactions": "",
@@ -114,12 +114,89 @@
                     "isPartOfComposite": true
                 },
                 {
+                    "name": "Arrows",
+                    "id": "ca9987d9-8269-4633-85dc-d9df9a9df922",
+                    "path": "2DVector(mode=2)",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyboardMouse",
+                    "action": "Move",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "3f970e7a-b2c2-4ebd-a235-4620c31e93c6",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyboardMouse",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "1d71d8c9-95bf-4745-b362-a34cb1a8f182",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyboardMouse",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "f5f21a75-bdbb-4c2a-95db-d2816e6d3f9d",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyboardMouse",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "fda12a62-3235-4c4c-a501-2f2979fd7b11",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyboardMouse",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
                     "name": "",
                     "id": "3f596879-4250-4b40-bf17-eb5166f6ba6d",
                     "path": "<Gamepad>/dpad",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "eaaaffed-f4b6-4332-83fd-21ba94146278",
+                    "path": "<Gamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "36883509-ec62-4b1d-a8dc-85bbcb608faa",
+                    "path": "<Touchscreen>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mobile",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -133,7 +210,7 @@
                 {
                     "name": "Pause",
                     "type": "Button",
-                    "id": "65368d96-ceb6-4e93-ad71-ff1661f40a3a",
+                    "id": "ff4642d2-9bf1-4ac0-b4a0-65f27a425c30",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -143,7 +220,7 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "a74f9b95-62df-42e5-9b23-ab869b34e252",
+                    "id": "3deae18b-92a6-42c2-881d-69eaf9b7fa39",
                     "path": "<Keyboard>/escape",
                     "interactions": "",
                     "processors": "",
@@ -154,11 +231,11 @@
                 },
                 {
                     "name": "",
-                    "id": "71da6e4e-622e-441b-9562-ee25fcdc7da5",
+                    "id": "d8e1e211-8006-4dc1-8b2b-be2eb3ed127d",
                     "path": "<Gamepad>/start",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Gamepad",
+                    "groups": "KeyboardMouse",
                     "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -195,11 +272,16 @@
             ]
         },
         {
-            "name": "GamepadAlternative",
-            "bindingGroup": "GamepadAlternative",
+            "name": "Mobile",
+            "bindingGroup": "Mobile",
             "devices": [
                 {
-                    "devicePath": "<Gamepad>",
+                    "devicePath": "<Pointer>",
+                    "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<Touchscreen>",
                     "isOptional": false,
                     "isOR": false
                 }
