@@ -80,6 +80,8 @@ public class Options : MonoBehaviour
 
     public void SetResolution(int index)
     {
+        Resolution resolution = _resolutions[index];
+        Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
         PlayerPrefs.SetInt(_resolutionSave, index);
         PlayerPrefs.Save();
     }
