@@ -93,21 +93,19 @@ public class Options : MonoBehaviour
         return volumePercent;
     }
 
-    public void SetMusicVolume(float volumePercent)
+    public void SetMusicVolume(float volumePercent) => SetAudioVolume(volumePercent, _musicParam);
+
+    public void SetSoundVolume(float volumePercent) => SetAudioVolume(volumePercent, _soundParam); 
+
+    public void SetAudioVolume(float volumePercent, string audioParam)
     {
+        if(volumePercent < 1) volumePercent = .001f;
+
         var volume = GetVolume(volumePercent);
-        _mixer.SetFloat(_musicParam, volume);
-        PlayerPrefs.SetFloat(_musicParam, volumePercent);
+        _mixer.SetFloat(audioParam, volume);
+        PlayerPrefs.SetFloat(audioParam, volumePercent);
         PlayerPrefs.Save();
     }
 
-    public void SetSoundVolume(float volumePercent)
-    {
-        var volume = GetVolume(volumePercent);
-        _mixer.SetFloat(_soundParam, volume);
-        PlayerPrefs.SetFloat(_soundParam, volumePercent);
-        PlayerPrefs.Save();
-    }
-
-    private float GetVolume(float volumePercent) { return Mathf.Lerp(-45f, 0f, volumePercent / 10f); }  
+    private float GetVolume(float volumePercent) { return Mathf.Log10(volumePercent / 10) * 40f; }  
 }

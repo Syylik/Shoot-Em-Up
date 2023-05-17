@@ -22,7 +22,7 @@ public class Enemy : MonoBehaviour
     {
         _afterSpawnPoint = afterSpawn;
         _isMovingToSpawn = true;
-        GetComponent<EnemyHealth>().OnDie.AddListener(enemyControl.ReduceEnemyLeft);
+        GetComponent<EnemyHealth>().OnDie.AddListener(enemyControl.ReduceEnemyCount);
         GetComponent<Shoot>().shootTime += Random.Range(-0.15f, 0.65f);
         OnMoveToSpawnStart?.Invoke();
     }
