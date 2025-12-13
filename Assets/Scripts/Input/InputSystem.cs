@@ -11,6 +11,11 @@ public class InputSystem : MonoBehaviour
 
     private void Awake()
     {
+        if(Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
         Instance = this;
         input = new Input();
         playerInput = GetComponent<PlayerInput>();

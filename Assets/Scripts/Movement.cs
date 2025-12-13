@@ -4,7 +4,7 @@ public class Movement : MonoBehaviour
 {
     public float moveSpeed;
     internal Vector2 moveDirection;
-    [SerializeField] private bool _isClamped = true;  //убирать на пулях
+    [SerializeField] private bool _isClamped = true;
 
     public void Init(Vector2 moveDir) => moveDirection = moveDir;
 

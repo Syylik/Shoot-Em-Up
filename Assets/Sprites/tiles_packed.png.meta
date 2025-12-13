@@ -25,7 +25,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -72,11 +72,12 @@ TextureImporter:
     maxTextureSize: 256
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -89,6 +90,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -101,6 +103,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -113,6 +116,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -125,6 +129,20 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 256
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
@@ -2388,127 +2406,127 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      tiles_packed_119: -1246509301
-      tiles_packed_48: 1807618909
-      tiles_packed_86: -897426888
-      tiles_packed_101: -1321965162
-      tiles_packed_111: -1587836580
-      tiles_packed_49: -1072704476
-      tiles_packed_17: -1720529734
-      tiles_packed_62: -1483207459
-      tiles_packed_60: 1053689977
-      tiles_packed_58: -618617739
-      hp: -168786237
-      tiles_packed_71: 1512494283
-      tiles_packed_23: 127690551
-      tiles_packed_35: 743662836
-      tiles_packed_30: -1327356919
-      tiles_packed_51: -2015025392
-      tiles_packed_93: -346253583
-      tiles_packed_18: 2018704299
-      tiles_packed_31: -1721340577
-      tiles_packed_85: -262048967
-      tiles_packed_99: 1150415733
-      tiles_packed_66: 375829544
-      tank: 1550365764
-      tiles_packed_105: 1460834677
-      tiles_packed_110: 256496345
-      tiles_packed_69: 980847422
-      tiles_packed_59: 1852968447
-      tiles_packed_112: 249376052
-      tiles_packed_100: 1764383638
-      tiles_packed_77: 783690675
-      tiles_packed_118: 507227886
-      tiles_packed_54: -1641477571
-      smoke: 1076941373
-      tiles_packed_87: 517111403
-      tiles_packed_33: 331310600
-      tiles_packed_91: -209295013
-      tiles_packed_52: 947477653
-      tiles_packed_56: -2050204599
-      tiles_packed_11: 387958881
-      tiles_packed_36: 1385289791
-      tiles_packed_21: -149624861
-      tiles_packed_44: -1589259361
-      tiles_packed_76: -485020080
-      tiles_packed_79: -1094533566
-      cursor: -446988135
-      tiles_packed_83: 1703478589
-      tiles_packed_46: -2108671049
-      tiles_packed_114: -823937723
-      tiles_packed_12: 156326701
-      tiles_packed_37: 1281306641
-      tiles_packed_53: -729729914
-      tiles_packed_78: -1637040583
-      tiles_packed_84: 29927636
-      two_bullet: -17961307
-      tiles_packed_95: -1126748309
-      megaPower: -988214958
-      tiles_packed_15: -2108146838
-      tiles_packed_19: -743559684
-      tiles_packed_98: -167243323
-      tiles_packed_80: -917341764
-      tiles_packed_65: -185700900
-      tiles_packed_72: 1405040404
-      tiles_packed_109: 1683203363
-      tiles_packed_115: 67310056
-      tiles_packed_42: -902167306
-      tiles_packed_50: 1612178081
-      tiles_packed_45: 1868130135
-      tiles_packed_61: 435090707
-      tiles_packed_97: -1497931353
-      tiles_packed_92: -1663729113
-      tiles_packed_106: -1946353939
-      tiles_packed_14: 2012343610
-      tiles_packed_88: -597141680
-      tiles_packed_108: -449951848
-      tiles_packed_117: -253008886
-      tiles_packed_73: 434153528
-      tiles_packed_10: 173199279
-      tiles_packed_16: 1717500260
       ballBullet: 539187167
-      tiles_packed_63: 809672871
+      bullet: -1944018052
+      bullet2: -343280500
+      cursor: -446988135
+      destroy: 1017581280
+      hp: -168786237
+      megaPower: -988214958
+      shield: -1688263402
+      shot: 294265684
+      smoke: 1076941373
+      tank: 1550365764
+      tiles_packed_10: 173199279
+      tiles_packed_100: 1764383638
+      tiles_packed_101: -1321965162
+      tiles_packed_102: 934277230
+      tiles_packed_103: -502454219
+      tiles_packed_104: -703625552
+      tiles_packed_105: 1460834677
+      tiles_packed_106: -1946353939
+      tiles_packed_107: 191667705
+      tiles_packed_108: -449951848
+      tiles_packed_109: 1683203363
+      tiles_packed_11: 387958881
+      tiles_packed_110: 256496345
+      tiles_packed_111: -1587836580
+      tiles_packed_112: 249376052
+      tiles_packed_113: 1956771086
+      tiles_packed_114: -823937723
+      tiles_packed_115: 67310056
+      tiles_packed_116: 281714824
+      tiles_packed_117: -253008886
+      tiles_packed_118: 507227886
+      tiles_packed_119: -1246509301
+      tiles_packed_12: 156326701
+      tiles_packed_13: -838234231
+      tiles_packed_14: 2012343610
+      tiles_packed_15: -2108146838
+      tiles_packed_16: 1717500260
+      tiles_packed_17: -1720529734
+      tiles_packed_18: 2018704299
+      tiles_packed_19: -743559684
+      tiles_packed_20: -1641294061
+      tiles_packed_21: -149624861
       tiles_packed_22: -1171837504
-      tiles_packed_64: 301574489
-      tiles_packed_41: -679276497
+      tiles_packed_23: 127690551
+      tiles_packed_28: -755269954
+      tiles_packed_30: -1327356919
+      tiles_packed_31: -1721340577
+      tiles_packed_32: -371850825
+      tiles_packed_33: 331310600
       tiles_packed_34: -150725183
+      tiles_packed_35: 743662836
+      tiles_packed_36: 1385289791
+      tiles_packed_37: 1281306641
       tiles_packed_38: -496841490
       tiles_packed_39: -678657367
-      tiles_packed_9: 1508174239
-      tiles_packed_55: -1286503473
-      tiles_packed_74: 758367726
-      tiles_packed_70: -28746816
-      tiles_packed_81: -980023499
-      tiles_packed_13: -838234231
-      tiles_packed_75: -1936582076
-      tiles_packed_104: -703625552
-      tiles_packed_57: -821816841
-      tiles_packed_20: -1641294061
-      tiles_packed_90: 994237921
-      tiles_packed_68: 475017154
-      tiles_packed_116: 281714824
-      tiles_packed_43: 1440800172
-      tiles_packed_47: 1307206432
-      tiles_packed_102: 934277230
       tiles_packed_4: -1641666680
-      tiles_packed_6: 889627047
-      tiles_packed_113: 1956771086
-      tiles_packed_28: -755269954
-      shield: -1688263402
-      tiles_packed_94: -1950120443
-      bullet: -1944018052
-      tiles_packed_82: 1568113023
-      tiles_packed_32: -371850825
-      tiles_packed_67: 297365381
-      tiles_packed_107: 191667705
-      tiles_packed_96: -1949932502
-      shot: 294265684
-      bullet2: -343280500
-      destroy: 1017581280
-      tiles_packed_103: -502454219
-      tiles_packed_89: -957045504
       tiles_packed_40: 1945370512
-  spritePackingTag: 
+      tiles_packed_41: -679276497
+      tiles_packed_42: -902167306
+      tiles_packed_43: 1440800172
+      tiles_packed_44: -1589259361
+      tiles_packed_45: 1868130135
+      tiles_packed_46: -2108671049
+      tiles_packed_47: 1307206432
+      tiles_packed_48: 1807618909
+      tiles_packed_49: -1072704476
+      tiles_packed_50: 1612178081
+      tiles_packed_51: -2015025392
+      tiles_packed_52: 947477653
+      tiles_packed_53: -729729914
+      tiles_packed_54: -1641477571
+      tiles_packed_55: -1286503473
+      tiles_packed_56: -2050204599
+      tiles_packed_57: -821816841
+      tiles_packed_58: -618617739
+      tiles_packed_59: 1852968447
+      tiles_packed_6: 889627047
+      tiles_packed_60: 1053689977
+      tiles_packed_61: 435090707
+      tiles_packed_62: -1483207459
+      tiles_packed_63: 809672871
+      tiles_packed_64: 301574489
+      tiles_packed_65: -185700900
+      tiles_packed_66: 375829544
+      tiles_packed_67: 297365381
+      tiles_packed_68: 475017154
+      tiles_packed_69: 980847422
+      tiles_packed_70: -28746816
+      tiles_packed_71: 1512494283
+      tiles_packed_72: 1405040404
+      tiles_packed_73: 434153528
+      tiles_packed_74: 758367726
+      tiles_packed_75: -1936582076
+      tiles_packed_76: -485020080
+      tiles_packed_77: 783690675
+      tiles_packed_78: -1637040583
+      tiles_packed_79: -1094533566
+      tiles_packed_80: -917341764
+      tiles_packed_81: -980023499
+      tiles_packed_82: 1568113023
+      tiles_packed_83: 1703478589
+      tiles_packed_84: 29927636
+      tiles_packed_85: -262048967
+      tiles_packed_86: -897426888
+      tiles_packed_87: 517111403
+      tiles_packed_88: -597141680
+      tiles_packed_89: -957045504
+      tiles_packed_9: 1508174239
+      tiles_packed_90: 994237921
+      tiles_packed_91: -209295013
+      tiles_packed_92: -1663729113
+      tiles_packed_93: -346253583
+      tiles_packed_94: -1950120443
+      tiles_packed_95: -1126748309
+      tiles_packed_96: -1949932502
+      tiles_packed_97: -1497931353
+      tiles_packed_98: -167243323
+      tiles_packed_99: 1150415733
+      two_bullet: -17961307
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
   assetBundleName: 

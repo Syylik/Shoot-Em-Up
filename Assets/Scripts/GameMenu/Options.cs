@@ -2,21 +2,20 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.Rendering.PostProcessing;
 using UnityEngine.UI;
 
 public class Options : MonoBehaviour
 {
     [Header("Video")]
 
-    [SerializeField] private Toggle _fullscreenToggle;
-    [SerializeField] private TMP_Dropdown _qualityDrowdown;
+    [SerializeField] private TMP_Dropdown _qualityDropdown;
+    [SerializeField] private PostProcessVolume _postProcessVolume;
 
-    private Resolution[] _resolutions;
-    [SerializeField] private TMP_Dropdown _resolutionDropdown;
-
-    private readonly string _fullscreenSave = "Fullscreen";
     private readonly string _qualitySave = "Quality";
-    private readonly string _resolutionSave = "Resolution";
+
+    [SerializeField] private GameObject _fpsCounter;
+
 
     [Header("Audio")]
 
@@ -32,43 +31,13 @@ public class Options : MonoBehaviour
 
     private void Start()
     {
-        bool fullscreenState = PlayerPrefs.GetInt(_fullscreenSave, 1) == 1 ? true : false;
-        _fullscreenToggle.isOn = fullscreenState;
-        SetFullscreen(fullscreenState);
+        _qualityDropdown.value = PlayerPrefs.GetInt(_qualitySave, QualitySettings.GetQualityLevel());
+        SetQuality(_qualityDropdown.value);
 
-        _qualityDrowdown.value = PlayerPrefs.GetInt(_qualitySave, QualitySettings.GetQualityLevel());
-        SetQuality(_qualityDrowdown.value);
+        _qualityDropdown.RefreshShownValue();
 
-        _qualityDrowdown.RefreshShownValue();
-
-        _resolutions = Screen.resolutions;
-        _resolutionDropdown.ClearOptions();
-
-        List<string> options = new List<string>();
-        int curResolutionIndex = 0;
-        
-        for(int i = 0; i < _resolutions.Length; i++)
-        {
-            string option = $"{_resolutions[i].width} x {_resolutions[i].height}";
-            options.Add(option);
-
-            if
-            (_resolutions[i].width == Screen.currentResolution.width &&
-            _resolutions[i].height == Screen.currentResolution.height) curResolutionIndex = i;
-        }
-        _resolutionDropdown.AddOptions(options);
-        _resolutionDropdown.value = curResolutionIndex;
-        _resolutionDropdown.RefreshShownValue();
-
-        _musicSlider.value = GetVolumeSave(_musicParam);
-        _soundSlider.value = GetVolumeSave(_soundParam);
-    }
-
-    public void SetFullscreen(bool state)
-    {
-        Screen.fullScreen = state;
-        PlayerPrefs.SetInt(_fullscreenSave, state ? 1 : 0);
-        PlayerPrefs.Save();
+        _musicSlider.value = GetVolumeSave(_musicParam) / 10;
+        _soundSlider.value = GetVolumeSave(_soundParam) / 10;
     }
 
     public void SetQuality(int index)
@@ -76,26 +45,22 @@ public class Options : MonoBehaviour
         QualitySettings.SetQualityLevel(index);
         PlayerPrefs.SetInt(_qualitySave, index);
         PlayerPrefs.Save();
+
+        _postProcessVolume.enabled = index >= 2 ? true : false;
     }
 
-    public void SetResolution(int index)
-    {
-        Resolution resolution = _resolutions[index];
-        Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
-        PlayerPrefs.SetInt(_resolutionSave, index);
-        PlayerPrefs.Save();
-    }
+    public void SetFpsCounter(bool state) => _fpsCounter.SetActive(state);
 
     private float GetVolumeSave(string param)
     {
-        var volumePercent = PlayerPrefs.GetFloat(param, 10);
+        var volumePercent = PlayerPrefs.GetFloat(param, 50);
         _mixer.SetFloat(param, GetVolume(volumePercent));
         return volumePercent;
     }
 
-    public void SetMusicVolume(float volumePercent) => SetAudioVolume(volumePercent, _musicParam);
+    public void SetMusicVolume(float volumePercent) => SetAudioVolume(volumePercent * 10, _musicParam);
 
-    public void SetSoundVolume(float volumePercent) => SetAudioVolume(volumePercent, _soundParam); 
+    public void SetSoundVolume(float volumePercent) => SetAudioVolume(volumePercent * 10, _soundParam); 
 
     public void SetAudioVolume(float volumePercent, string audioParam)
     {
@@ -107,5 +72,5 @@ public class Options : MonoBehaviour
         PlayerPrefs.Save();
     }
 
-    private float GetVolume(float volumePercent) { return Mathf.Log10(volumePercent / 10) * 40f; }  
+    private float GetVolume(float volumePercent) { return Mathf.Log10(volumePercent / 100f) * 40f; }  
 }

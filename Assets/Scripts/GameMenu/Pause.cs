@@ -1,5 +1,4 @@
 using UnityEngine;
-using YG;
 
 public class Pause : MonoBehaviour
 {
@@ -15,11 +14,7 @@ public class Pause : MonoBehaviour
         else Instance = this;
     }
 
-    private void Start()
-    {
-        InputSystem.input.UI.Pause.performed += context => SetPause();
-        YandexGame.Instance.CloseFullscreenAd.AddListener(SetPause);
-    }
+    private void Start() => InputSystem.input.UI.Pause.performed += context => SetPause();
 
     public void SetPause()
     {

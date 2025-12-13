@@ -1,7 +1,6 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
-using YG;
 
 public class GameControl : MonoBehaviour
 {
@@ -12,7 +11,7 @@ public class GameControl : MonoBehaviour
     [SerializeField] private GameObject _blackPanel;
 
     internal int wave;
-    [SerializeField] private TextMeshProUGUI _waveText;
+    [SerializeField] private TMP_Text _waveText;
     [SerializeField] private int _waveSpawnCount;
     [SerializeField] private float _waveRateTime;
 
@@ -26,6 +25,9 @@ public class GameControl : MonoBehaviour
     {
         if(Instance != null && Instance != this) Destroy(this);
         else Instance = this;
+     
+        QualitySettings.vSyncCount = 0;
+        Application.targetFrameRate = 120;
     }
 
     private void Start() => StartCoroutine(SpawnWaves());
@@ -47,14 +49,12 @@ public class GameControl : MonoBehaviour
         while(enemyCount > 0) yield return null;
 
         int chance = Random.Range(0, 100);
-        if(chance <= 85) _waveSpawnCount++;
-        else if(chance <= 15) _waveSpawnCount += 2;
-        else if(chance <= 15 && _waveSpawnCount > 2) _waveSpawnCount -= 2;
+        if(chance <= 15) _waveSpawnCount += 2;
+        else if(chance <= 85) _waveSpawnCount++;
+        // else if(chance <= 15 && _waveSpawnCount > 2) _waveSpawnCount -= 2;
         
         yield return new WaitForSeconds(Random.Range(_waveRateTime - 0.5f, _waveRateTime + 0.4f));
         StartCoroutine(SpawnWaves());
-
-        //YandexGame.Instance._FullscreenShow();
     }
 
     public void Loose()
@@ -63,7 +63,6 @@ public class GameControl : MonoBehaviour
         Time.timeScale = 0f;
         SetBlackPanel(true);
         _loosePanel.SetActive(true);
-        YandexGame.Instance._FullscreenShow();
     }
 
     public void SetBlackPanel(bool state) => _blackPanel.SetActive(state);
