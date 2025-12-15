@@ -8,7 +8,7 @@ public class Shoot : MonoBehaviour
     [SerializeField] internal GameObject shootEffect;
     [SerializeField] internal RandomSound shootSound;
 
-    [SerializeField] private float _shootColdown;
+    [SerializeField] private float _shootCooldown;
     internal float shootTime = 0.15f;
 
     [SerializeField] internal bool isShooting;
@@ -25,7 +25,7 @@ public class Shoot : MonoBehaviour
     {
         if(shootTime <= 0)
         {
-            shootTime = _shootColdown;
+            shootTime = _shootCooldown;
             InstantiateBullet();
             if(shootSound != null && shootEffect != null) ShootVFX();
         }

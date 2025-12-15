@@ -8,11 +8,10 @@ using UnityEngine.UI;
 public class Options : MonoBehaviour
 {
     [Header("Video")]
-
-    [SerializeField] private TMP_Dropdown _qualityDropdown;
+    [SerializeField] private Toggle _postProcessToggle;
     [SerializeField] private PostProcessVolume _postProcessVolume;
 
-    private readonly string _qualitySave = "Quality";
+    private readonly string _postProcessSave = "PostProcess";
 
     [SerializeField] private GameObject _fpsCounter;
 
@@ -27,26 +26,20 @@ public class Options : MonoBehaviour
     private readonly string _musicParam = "Music";
     private readonly string _soundParam = "Sound";
 
-
-
     private void Start()
     {
-        _qualityDropdown.value = PlayerPrefs.GetInt(_qualitySave, QualitySettings.GetQualityLevel());
-        SetQuality(_qualityDropdown.value);
-
-        _qualityDropdown.RefreshShownValue();
+        _postProcessToggle.isOn = PlayerPrefs.GetInt(_postProcessSave, 0) == 1 ? true : false;
+        _postProcessVolume.enabled = _postProcessToggle.isOn;
 
         _musicSlider.value = GetVolumeSave(_musicParam) / 10;
         _soundSlider.value = GetVolumeSave(_soundParam) / 10;
     }
 
-    public void SetQuality(int index)
+    public void TogglePostProcess(bool state)
     {
-        QualitySettings.SetQualityLevel(index);
-        PlayerPrefs.SetInt(_qualitySave, index);
+        _postProcessVolume.enabled = state;
+        PlayerPrefs.SetInt(_postProcessSave, state ? 1 : 0);
         PlayerPrefs.Save();
-
-        _postProcessVolume.enabled = index >= 2 ? true : false;
     }
 
     public void SetFpsCounter(bool state) => _fpsCounter.SetActive(state);
@@ -72,5 +65,5 @@ public class Options : MonoBehaviour
         PlayerPrefs.Save();
     }
 
-    private float GetVolume(float volumePercent) { return Mathf.Log10(volumePercent / 100f) * 40f; }  
+    private float GetVolume(float volumePercent) { return Mathf.Lerp(-80f, 0f, volumePercent / 100f); }  
 }

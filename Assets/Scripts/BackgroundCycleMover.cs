@@ -10,6 +10,7 @@ public class BackgroundCycleMover : MonoBehaviour
 
     private void Update()
     {
+        if(Pause.Instance.isPaused) return;
         if(_speed < _maxSpeed) _speed += _speedByTime * Time.deltaTime;
         _background.Translate(Vector2.down * _speed * Time.deltaTime);
         if(_background.transform.position.y < threshold) _background.transform.position = Vector2.zero; 
