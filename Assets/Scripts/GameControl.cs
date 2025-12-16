@@ -21,7 +21,7 @@ public class GameControl : MonoBehaviour
 
     public static GameControl Instance { get; private set; }
 
-    private void Awake()
+    public void Init()
     {
         if(Instance != null && Instance != this) Destroy(this);
         else Instance = this;

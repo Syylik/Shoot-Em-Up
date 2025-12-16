@@ -19359,6 +19359,7 @@ Transform:
   m_Children:
   - {fileID: 904928425}
   - {fileID: 913927731}
+  - {fileID: 323675449}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &231246324
@@ -19506,6 +19507,53 @@ Transform:
   m_Children: []
   m_Father: {fileID: 364123923}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &323675448
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 323675449}
+  - component: {fileID: 323675450}
+  m_Layer: 0
+  m_Name: Bootstrap
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &323675449
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 323675448}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 149533269}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &323675450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 323675448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6904d7d006a119a69adf1f801f7ff129, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _player: {fileID: 1859310211}
+  _gameControl: {fileID: 904928424}
+  _input: {fileID: 537408133}
 --- !u!1 &349550394
 GameObject:
   m_ObjectHideFlags: 0
@@ -20483,7 +20531,7 @@ Camera:
   m_AllowMSAA: 0
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
-  m_OcclusionCulling: 0
+  m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
 --- !u!4 &519420032
@@ -23988,7 +24036,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemyPrefab: {fileID: 3883765310071235632, guid: cbb59d47588f08a499770eba22f6b7b2, type: 3}
   _bossPrefab: {fileID: 0}
-  _bossSpawnPos: {fileID: 0}
+  _bossSpawnPos: {fileID: 320273548}
   _spawnPoses:
   - {fileID: 719336133}
   - {fileID: 698077652}
@@ -25818,6 +25866,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1382718298}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1859310211 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5641630410110220303, guid: 406a26053c62c92d3917f05f4b725485, type: 3}
+  m_PrefabInstance: {fileID: 2652122298389473560}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87b1872ff27c6ac42b6b0103dc938c85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1865709956
 GameObject:
   m_ObjectHideFlags: 0
@@ -26546,6 +26605,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1532855157598052419, guid: 406a26053c62c92d3917f05f4b725485, type: 3}
+      propertyPath: isShooting
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2591684586107022499, guid: 406a26053c62c92d3917f05f4b725485, type: 3}
       propertyPath: _healthBar
       value: 

@@ -9,7 +9,7 @@ public class InputSystem : MonoBehaviour
 
     public static InputSystem Instance { get; private set; }
 
-    private void Awake()
+    public void Init()
     {
         if(Instance != null && Instance != this)
         {

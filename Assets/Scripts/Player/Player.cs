@@ -15,7 +15,7 @@ public class Player : MonoBehaviour
 
     private void Awake() => Init();
 
-    private void Init()
+    public void Init()
     {
         _input = InputSystem.input;
         _playerMove = GetComponent<Movement>();
@@ -23,7 +23,7 @@ public class Player : MonoBehaviour
         _playerHealth = GetComponent<PlayerHealth>();
         _playerUI = GetComponent<PlayerUI>();
         _anim = GetComponent<Animator>();
-
+        
         _playerHealth.OnDie.AddListener(GameControl.Instance.Loose);
     }
 
