@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: TGD
-  productName: Shoot Em Up
+  productName: Shoot It All
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.06579243, g: 0.061192427, b: 0.0804311, a: 1}

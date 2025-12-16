@@ -65,5 +65,5 @@ public class Options : MonoBehaviour
         PlayerPrefs.Save();
     }
 
-    private float GetVolume(float volumePercent) { return Mathf.Lerp(-80f, 0f, volumePercent / 100f); }  
+    private float GetVolume(float volumePercent) { return Mathf.Log10(volumePercent / 100f) * 40f; }  
 }
