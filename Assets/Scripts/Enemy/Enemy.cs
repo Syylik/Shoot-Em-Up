@@ -2,10 +2,10 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [RequireComponent(typeof(Shoot), typeof(Health))]
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour, IPoolObject
 {
     [SerializeField] private float _speed;
-    [SerializeField] private Transform _afterSpawnPoint; //Точка, в которую прилетает враг после спавна
+    [SerializeField] private Transform _afterSpawnPoint;
 
     public UnityEvent OnMoveToSpawnStart;
     public UnityEvent OnMoveToSpawnEnd;
@@ -40,5 +40,15 @@ public class Enemy : MonoBehaviour
                 OnMoveToSpawnEnd?.Invoke();
             }
         }
+    }
+
+    public void Enable(Vector2 position, Quaternion rotation)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void Disable()
+    {
+        throw new System.NotImplementedException();
     }
 }

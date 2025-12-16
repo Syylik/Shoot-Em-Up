@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class Bullet : MonoBehaviour, IPoolObject
 {
     [SerializeField] private int _damage;
     [SerializeField] private GameObject _damageEffect;
@@ -22,5 +22,15 @@ public class Bullet : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.CompareTag(_zoneTag)) Destroy(gameObject);
+    }
+
+    public void Enable(Vector2 position, Quaternion rotation)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void Disable()
+    {
+        throw new System.NotImplementedException();
     }
 }
