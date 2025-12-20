@@ -21,16 +21,18 @@ public class Bullet : MonoBehaviour, IPoolObject
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag(_zoneTag)) Destroy(gameObject);
+        if(collision.CompareTag(_zoneTag)) GameControl.Instance.bulletPool.Despawn(this);
     }
 
     public void Enable(Vector2 position, Quaternion rotation)
     {
-        throw new System.NotImplementedException();
+        transform.position = position;
+        transform.rotation = rotation;
+        gameObject.SetActive(true);
     }
 
     public void Disable()
     {
-        throw new System.NotImplementedException();
+        gameObject.SetActive(false);
     }
 }

@@ -19,22 +19,30 @@ public class GameControl : MonoBehaviour
 
     internal bool isLoosed = false;
 
+    [SerializeField] private Bullet _bulletPrefab;
+    public Pool<Bullet> bulletPool;
+
     public static GameControl Instance { get; private set; }
 
-    public void Init()
+    public void Awake()
     {
         if(Instance != null && Instance != this) Destroy(this);
         else Instance = this;
-     
+        
         QualitySettings.vSyncCount = 0;
         Application.targetFrameRate = 120;
+        bulletPool = new Pool<Bullet>(_bulletPrefab, 32);
     }
 
     private void Start() => StartCoroutine(SpawnWaves());
 
     public void AddEnemyCount() => enemyCount++;     // On Enemy Spawn
 
-    public void ReduceEnemyCount() => enemyCount--;  // On Enemy Death
+    public void ReduceEnemyCount()
+    {
+        enemyCount--;  // On Enemy Death
+        Debug.Log(enemyCount);
+    } 
 
     private IEnumerator SpawnWaves()
     {

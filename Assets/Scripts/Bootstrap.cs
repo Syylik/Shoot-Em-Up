@@ -8,9 +8,9 @@ public class Bootstrap : MonoBehaviour
 
     private void Awake()
     {
-        _input.Init();
-        _gameControl.Init();
+        // _input.Init();
+        // _gameControl.Init();
 
-        _player.Init();
+        // _player.Init();
     }
 }

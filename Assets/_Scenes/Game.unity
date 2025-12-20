@@ -23990,6 +23990,7 @@ MonoBehaviour:
   _waveText: {fileID: 1520982952}
   _waveSpawnCount: 2
   _waveRateTime: 0.5
+  _bulletPrefab: {fileID: 6160494507107684636, guid: cb04e1a26faaf3e4fa0e4f613eb2e121, type: 3}
 --- !u!4 &904928425
 Transform:
   m_ObjectHideFlags: 0

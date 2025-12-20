@@ -12,9 +12,7 @@ public class Player : MonoBehaviour
     private Input _input;
 
     internal Animator _anim;
-
-    private void Awake() => Init();
-
+    
     public void Init()
     {
         _input = InputSystem.input;
@@ -29,6 +27,7 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
+        Init();
         _input.Game.Fire.performed += context => _playerShoot.ShootState(true);
         _input.Game.Fire.canceled += context => _playerShoot.ShootState(false);
     }

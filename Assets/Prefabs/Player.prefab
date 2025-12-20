@@ -347,7 +347,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bulletSpeed: 12
-  _bulletPrefab: {fileID: -4094579686363510452, guid: cb04e1a26faaf3e4fa0e4f613eb2e121, type: 3}
+  _bulletPrefab: {fileID: 6160494507107684636, guid: cb04e1a26faaf3e4fa0e4f613eb2e121, type: 3}
   _bulletSpawn: {fileID: 2989004008041463275}
   shootEffect: {fileID: 7256329935263012044, guid: 1e4cc4cf414daeb439339ba80ab8728e, type: 3}
   shootSound: {fileID: 5440435187586385150}

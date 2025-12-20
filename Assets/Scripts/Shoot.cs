@@ -3,7 +3,7 @@ using UnityEngine;
 public class Shoot : MonoBehaviour
 {
     [SerializeField] private float _bulletSpeed;
-    [SerializeField] private Movement _bulletPrefab;
+    [SerializeField] private Bullet _bulletPrefab;
     [SerializeField] private Transform _bulletSpawn;
     [SerializeField] internal GameObject shootEffect;
     [SerializeField] internal RandomSound shootSound;
@@ -40,9 +40,9 @@ public class Shoot : MonoBehaviour
 
     private void InstantiateBullet()
     {
-        var bullet = Instantiate(_bulletPrefab, _bulletSpawn.position, Quaternion.identity);
-        bullet.GetComponent<Bullet>().SetOwnerLayer(gameObject.layer);
-        bullet.Init(_bulletSpeed, transform.up);
+        var bullet = GameControl.Instance.bulletPool.Spawn(_bulletSpawn.position, Quaternion.identity);
+        bullet.SetOwnerLayer(gameObject.layer);
+        bullet.GetComponent<Movement>().Init(_bulletSpeed, transform.up);
     }
 
     public void ShootState(bool state) => isShooting = state;

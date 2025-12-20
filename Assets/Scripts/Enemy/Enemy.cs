@@ -10,7 +10,11 @@ public class Enemy : MonoBehaviour, IPoolObject
     public UnityEvent OnMoveToSpawnStart;
     public UnityEvent OnMoveToSpawnEnd;
 
+    [SerializeField] private EnemyHealth _health;
+
     private bool _isMovingToSpawn;
+    private GameControl _enemyControl;
+    private Pool<Enemy> _pool;
 
     private void Awake()
     {
@@ -18,12 +22,15 @@ public class Enemy : MonoBehaviour, IPoolObject
         OnMoveToSpawnStart?.Invoke();
     }
 
-    public void Init(Transform afterSpawn, GameControl enemyControl)
+    public void Init(Transform afterSpawn, GameControl enemyControl, Pool<Enemy> pool)
     {
         _afterSpawnPoint = afterSpawn;
         _isMovingToSpawn = true;
-        GetComponent<EnemyHealth>().OnDie.AddListener(enemyControl.ReduceEnemyCount);
-        GetComponent<Shoot>().shootTime += Random.Range(-0.15f, 0.65f);
+        _enemyControl = enemyControl;
+        _pool = pool; 
+        _health.OnDie.AddListener(OnDie);
+        var shoot = GetComponent<Shoot>();
+        shoot.shootTime = shoot.shootTime + Random.Range(-0.15f, 0.65f);
         OnMoveToSpawnStart?.Invoke();
     }
 
@@ -42,13 +49,23 @@ public class Enemy : MonoBehaviour, IPoolObject
         }
     }
 
+    private void OnDie()
+    {
+        _enemyControl.ReduceEnemyCount();
+        _pool.Despawn(this);
+    }
+
     public void Enable(Vector2 position, Quaternion rotation)
     {
-        throw new System.NotImplementedException();
+        _health.OnDie.RemoveListener(OnDie);
+        _health.health = _health.maxHealth;
+        transform.position = position;
+        transform.rotation = rotation;
+        gameObject.SetActive(true);
     }
 
     public void Disable()
     {
-        throw new System.NotImplementedException();
+        gameObject.SetActive(false);
     }
 }

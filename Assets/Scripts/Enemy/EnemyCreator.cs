@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
+using UnityEngine.Pool;
 
 public class EnemyCreator : MonoBehaviour
 {
@@ -13,8 +13,13 @@ public class EnemyCreator : MonoBehaviour
 
     [SerializeField] private float _timeBtwSpawn;
     private GameControl _enemyControl;
+    private Pool<Enemy> _enemyPool;
 
-    private void Awake() => _enemyControl = GameControl.Instance;
+    private void Awake() 
+    {
+        _enemyControl = GameControl.Instance;
+        _enemyPool = new Pool<Enemy>(_enemyPrefab);
+    }
 
     public void SpawnEnemies(int num) => StartCoroutine(SpawnEnemiesRoutine(num, _enemyPrefab));
     public void SpawnBoss() => StartCoroutine(SpawnEnemiesRoutine(1, _bossPrefab, _bossSpawnPos));
@@ -51,8 +56,9 @@ public class EnemyCreator : MonoBehaviour
             (afterSpawn.position.x + Random.Range(-0.5f, 0.5f),
             afterSpawn.position.y + Random.Range(6.5f, 10f));
 
-        var enemy = Instantiate(enemyPrefab, pos, _enemyPrefab.transform.rotation);
+        var enemy = _enemyPool.Spawn(pos, _enemyPrefab.transform.rotation);
+        // var enemy = Instantiate(enemyPrefab, pos, _enemyPrefab.transform.rotation);
         GameControl.Instance.AddEnemyCount();
-        enemy.Init(afterSpawn, _enemyControl);
+        enemy.Init(afterSpawn, _enemyControl, _enemyPool);
     }
 }
