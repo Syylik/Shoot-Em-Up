@@ -25,7 +25,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -77,6 +77,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -89,6 +90,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -101,6 +103,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -113,6 +116,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -125,6 +129,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -137,6 +142,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
@@ -3513,167 +3519,167 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      UIpackSheet_transparent_79: 918969631
-      UIpackSheet_transparent_82: 1658742856
-      UIpackSheet_transparent_43: 1993736514
-      UIpackSheet_transparent_134: 1794520302
-      UIpackSheet_transparent_18: 1522269252
-      UIpackSheet_transparent_54: 1653374326
-      UIpackSheet_transparent_50: 1732524668
-      UIpackSheet_transparent_63: -503556947
-      UIpackSheet_transparent_132: 2131361479
-      UIpackSheet_transparent_30: 520932622
-      UIpackSheet_transparent_28: 1578386883
-      UIpackSheet_transparent_98: 1521609891
-      UIpackSheet_transparent_51: 1882772866
-      UIpackSheet_transparent_62: 1862196423
-      UIpackSheet_transparent_44: -1135651290
-      UIpackSheet_transparent_34: 1312359656
-      UIpackSheet_transparent_35: 156291345
-      UIpackSheet_transparent_60: -782544006
-      UIpackSheet_transparent_139: 1373659630
-      UIpackSheet_transparent_72: 934477600
-      UIpackSheet_transparent_78: -1809116386
-      UIpackSheet_transparent_29: 722283284
-      UIpackSheet_transparent_129: -2005029835
-      UIpackSheet_transparent_94: 262358340
-      UIpackSheet_transparent_128: -672276919
-      UIpackSheet_transparent_46: 589743855
-      UIpackSheet_transparent_80: -54051776
-      UIpackSheet_transparent_137: 1968243723
-      UIpackSheet_transparent_154: 1150917022
-      UIpackSheet_transparent_77: 743617816
-      UIpackSheet_transparent_24: -1043551923
-      UIpackSheet_transparent_86: 2089361461
-      UIpackSheet_transparent_126: 966618370
-      UIpackSheet_transparent_123: 280704335
-      UIpackSheet_transparent_64: 14212363
-      UIpackSheet_transparent_4: 564509061
-      UIpackSheet_transparent_52: 901090374
-      UIpackSheet_transparent_114: 244015192
-      UIpackSheet_transparent_14: -2068145042
-      UIpackSheet_transparent_93: -1662586611
-      UIpackSheet_transparent_117: 605286112
-      UIpackSheet_transparent_25: -481771167
-      UIpackSheet_transparent_107: -1382683291
-      UIpackSheet_transparent_155: 54121525
-      UIpackSheet_transparent_20: 32546149
-      UIpackSheet_transparent_127: -1748750708
-      UIpackSheet_transparent_65: -2084778615
-      UIpackSheet_transparent_37: -378539099
-      UIpackSheet_transparent_55: 600358784
-      UIpackSheet_transparent_83: 530197077
-      UIpackSheet_transparent_133: 1394144104
-      UIpackSheet_transparent_150: 955287889
-      UIpackSheet_transparent_67: 900543533
-      UIpackSheet_transparent_95: -849117220
-      UIpackSheet_transparent_26: 1196284623
-      UIpackSheet_transparent_102: -142037611
-      UIpackSheet_transparent_109: -2012197786
-      UIpackSheet_transparent_10: 417803101
-      UIpackSheet_transparent_38: -1102357369
-      UIpackSheet_transparent_99: 448379769
-      UIpackSheet_transparent_48: 1158723701
-      UIpackSheet_transparent_111: 1303578451
-      UIpackSheet_transparent_75: 1236926687
-      UIpackSheet_transparent_136: 1564659590
-      UIpackSheet_transparent_140: -826627949
-      UIpackSheet_transparent_8: 1394226177
-      UIpackSheet_transparent_103: -682314459
-      UIpackSheet_transparent_70: -1453628121
-      UIpackSheet_transparent_147: 1259871587
-      UIpackSheet_transparent_27: 2094813950
-      UIpackSheet_transparent_116: 1039885959
-      UIpackSheet_transparent_23: 1525159236
-      UIpackSheet_transparent_16: 1290438813
-      UIpackSheet_transparent_149: 1056298462
-      UIpackSheet_transparent_33: 2019025955
-      UIpackSheet_transparent_41: -408309022
-      UIpackSheet_transparent_113: 297901861
-      UIpackSheet_transparent_148: -1729698040
-      UIpackSheet_transparent_90: 1252203917
       UIpackSheet_transparent_0: 1425417208
-      UIpackSheet_transparent_87: -1520475743
-      UIpackSheet_transparent_13: 1679987668
-      UIpackSheet_transparent_58: 2041165766
-      UIpackSheet_transparent_73: 44759590
-      UIpackSheet_transparent_89: 1454272843
-      UIpackSheet_transparent_106: 279422612
-      UIpackSheet_transparent_61: 172601610
-      UIpackSheet_transparent_3: 551542144
-      UIpackSheet_transparent_151: 280816862
-      UIpackSheet_transparent_66: -1027290329
-      UIpackSheet_transparent_97: 1392956977
-      UIpackSheet_transparent_115: -154642671
-      UIpackSheet_transparent_119: -1148732757
-      UIpackSheet_transparent_19: 88850312
-      UIpackSheet_transparent_159: -128554782
-      UIpackSheet_transparent_88: -1079925931
+      UIpackSheet_transparent_1: 902681175
+      UIpackSheet_transparent_10: 417803101
+      UIpackSheet_transparent_100: -1181959668
+      UIpackSheet_transparent_101: 1104686815
+      UIpackSheet_transparent_102: -142037611
+      UIpackSheet_transparent_103: -682314459
+      UIpackSheet_transparent_104: 731034139
       UIpackSheet_transparent_105: 1128569027
-      UIpackSheet_transparent_2: 1380342864
-      UIpackSheet_transparent_152: -1660249197
-      UIpackSheet_transparent_42: 243794249
-      UIpackSheet_transparent_138: 1958454517
-      UIpackSheet_transparent_135: 60639821
-      UIpackSheet_transparent_121: -1205983868
-      UIpackSheet_transparent_53: -2039855745
-      UIpackSheet_transparent_5: -532734828
-      UIpackSheet_transparent_39: 1249127981
-      UIpackSheet_transparent_76: 237736055
-      UIpackSheet_transparent_81: -284265224
-      UIpackSheet_transparent_91: 862703640
-      UIpackSheet_transparent_153: -1578008603
-      UIpackSheet_transparent_74: 2114353355
+      UIpackSheet_transparent_106: 279422612
+      UIpackSheet_transparent_107: -1382683291
+      UIpackSheet_transparent_108: -459589311
+      UIpackSheet_transparent_109: -2012197786
+      UIpackSheet_transparent_11: -1397120989
+      UIpackSheet_transparent_110: -293409383
+      UIpackSheet_transparent_111: 1303578451
       UIpackSheet_transparent_112: -1821408072
-      UIpackSheet_transparent_71: 1395596046
+      UIpackSheet_transparent_113: 297901861
+      UIpackSheet_transparent_114: 244015192
+      UIpackSheet_transparent_115: -154642671
+      UIpackSheet_transparent_116: 1039885959
+      UIpackSheet_transparent_117: 605286112
+      UIpackSheet_transparent_118: -1935920688
+      UIpackSheet_transparent_119: -1148732757
+      UIpackSheet_transparent_12: -1336513818
+      UIpackSheet_transparent_120: 428917065
+      UIpackSheet_transparent_121: -1205983868
+      UIpackSheet_transparent_122: 885221705
+      UIpackSheet_transparent_123: 280704335
+      UIpackSheet_transparent_124: 1330032395
+      UIpackSheet_transparent_125: 1605998979
+      UIpackSheet_transparent_126: 966618370
+      UIpackSheet_transparent_127: -1748750708
+      UIpackSheet_transparent_128: -672276919
+      UIpackSheet_transparent_129: -2005029835
+      UIpackSheet_transparent_13: 1679987668
+      UIpackSheet_transparent_130: 1691720536
+      UIpackSheet_transparent_131: -1111857607
+      UIpackSheet_transparent_132: 2131361479
+      UIpackSheet_transparent_133: 1394144104
+      UIpackSheet_transparent_134: 1794520302
+      UIpackSheet_transparent_135: 60639821
+      UIpackSheet_transparent_136: 1564659590
+      UIpackSheet_transparent_137: 1968243723
+      UIpackSheet_transparent_138: 1958454517
+      UIpackSheet_transparent_139: 1373659630
+      UIpackSheet_transparent_14: -2068145042
+      UIpackSheet_transparent_140: -826627949
       UIpackSheet_transparent_141: 151375338
       UIpackSheet_transparent_142: 1977908454
-      UIpackSheet_transparent_11: -1397120989
-      UIpackSheet_transparent_130: 1691720536
       UIpackSheet_transparent_143: -584644293
-      UIpackSheet_transparent_56: -316114342
-      UIpackSheet_transparent_40: 1605419000
-      UIpackSheet_transparent_92: -1279138731
-      UIpackSheet_transparent_45: -1823723555
-      UIpackSheet_transparent_158: -1751649945
-      UIpackSheet_transparent_31: 284330139
       UIpackSheet_transparent_144: -737584456
-      UIpackSheet_transparent_101: 1104686815
-      UIpackSheet_transparent_47: 1250279890
-      UIpackSheet_transparent_22: 1948075849
-      UIpackSheet_transparent_57: -1131775656
-      UIpackSheet_transparent_124: 1330032395
-      UIpackSheet_transparent_96: -1584187428
-      UIpackSheet_transparent_6: 986577916
+      UIpackSheet_transparent_145: 1673064523
+      UIpackSheet_transparent_146: 1280524101
+      UIpackSheet_transparent_147: 1259871587
+      UIpackSheet_transparent_148: -1729698040
+      UIpackSheet_transparent_149: 1056298462
+      UIpackSheet_transparent_15: -1630994322
+      UIpackSheet_transparent_150: 955287889
+      UIpackSheet_transparent_151: 280816862
+      UIpackSheet_transparent_152: -1660249197
+      UIpackSheet_transparent_153: -1578008603
+      UIpackSheet_transparent_154: 1150917022
+      UIpackSheet_transparent_155: 54121525
+      UIpackSheet_transparent_156: -1110131026
       UIpackSheet_transparent_157: -1780135174
-      UIpackSheet_transparent_104: 731034139
-      UIpackSheet_transparent_110: -293409383
+      UIpackSheet_transparent_158: -1751649945
+      UIpackSheet_transparent_159: -128554782
+      UIpackSheet_transparent_16: 1290438813
+      UIpackSheet_transparent_17: 1699086043
+      UIpackSheet_transparent_18: 1522269252
+      UIpackSheet_transparent_19: 88850312
+      UIpackSheet_transparent_2: 1380342864
+      UIpackSheet_transparent_20: 32546149
+      UIpackSheet_transparent_21: 1732182892
+      UIpackSheet_transparent_22: 1948075849
+      UIpackSheet_transparent_23: 1525159236
+      UIpackSheet_transparent_24: -1043551923
+      UIpackSheet_transparent_25: -481771167
+      UIpackSheet_transparent_26: 1196284623
+      UIpackSheet_transparent_27: 2094813950
+      UIpackSheet_transparent_28: 1578386883
+      UIpackSheet_transparent_29: 722283284
+      UIpackSheet_transparent_3: 551542144
+      UIpackSheet_transparent_30: 520932622
+      UIpackSheet_transparent_31: 284330139
+      UIpackSheet_transparent_32: -1802433095
+      UIpackSheet_transparent_33: 2019025955
+      UIpackSheet_transparent_34: 1312359656
+      UIpackSheet_transparent_35: 156291345
+      UIpackSheet_transparent_36: -1465347392
+      UIpackSheet_transparent_37: -378539099
+      UIpackSheet_transparent_38: -1102357369
+      UIpackSheet_transparent_39: 1249127981
+      UIpackSheet_transparent_4: 564509061
+      UIpackSheet_transparent_40: 1605419000
+      UIpackSheet_transparent_41: -408309022
+      UIpackSheet_transparent_42: 243794249
+      UIpackSheet_transparent_43: 1993736514
+      UIpackSheet_transparent_44: -1135651290
+      UIpackSheet_transparent_45: -1823723555
+      UIpackSheet_transparent_46: 589743855
+      UIpackSheet_transparent_47: 1250279890
+      UIpackSheet_transparent_48: 1158723701
+      UIpackSheet_transparent_49: -1567449385
+      UIpackSheet_transparent_5: -532734828
+      UIpackSheet_transparent_50: 1732524668
+      UIpackSheet_transparent_51: 1882772866
+      UIpackSheet_transparent_52: 901090374
+      UIpackSheet_transparent_53: -2039855745
+      UIpackSheet_transparent_54: 1653374326
+      UIpackSheet_transparent_55: 600358784
+      UIpackSheet_transparent_56: -316114342
+      UIpackSheet_transparent_57: -1131775656
+      UIpackSheet_transparent_58: 2041165766
+      UIpackSheet_transparent_59: 1832266332
+      UIpackSheet_transparent_6: 986577916
+      UIpackSheet_transparent_60: -782544006
+      UIpackSheet_transparent_61: 172601610
+      UIpackSheet_transparent_62: 1862196423
+      UIpackSheet_transparent_63: -503556947
+      UIpackSheet_transparent_64: 14212363
+      UIpackSheet_transparent_65: -2084778615
+      UIpackSheet_transparent_66: -1027290329
+      UIpackSheet_transparent_67: 900543533
       UIpackSheet_transparent_68: -103450711
       UIpackSheet_transparent_69: 1085841270
-      UIpackSheet_transparent_12: -1336513818
-      UIpackSheet_transparent_49: -1567449385
-      UIpackSheet_transparent_85: 1654455319
-      UIpackSheet_transparent_125: 1605998979
-      UIpackSheet_transparent_120: 428917065
-      UIpackSheet_transparent_84: -1397375856
-      UIpackSheet_transparent_36: -1465347392
-      UIpackSheet_transparent_100: -1181959668
-      UIpackSheet_transparent_59: 1832266332
-      UIpackSheet_transparent_17: 1699086043
-      UIpackSheet_transparent_118: -1935920688
-      UIpackSheet_transparent_156: -1110131026
-      UIpackSheet_transparent_146: 1280524101
-      UIpackSheet_transparent_1: 902681175
       UIpackSheet_transparent_7: -1615630945
-      UIpackSheet_transparent_21: 1732182892
-      UIpackSheet_transparent_32: -1802433095
-      UIpackSheet_transparent_15: -1630994322
-      UIpackSheet_transparent_122: 885221705
-      UIpackSheet_transparent_131: -1111857607
-      UIpackSheet_transparent_108: -459589311
-      UIpackSheet_transparent_145: 1673064523
+      UIpackSheet_transparent_70: -1453628121
+      UIpackSheet_transparent_71: 1395596046
+      UIpackSheet_transparent_72: 934477600
+      UIpackSheet_transparent_73: 44759590
+      UIpackSheet_transparent_74: 2114353355
+      UIpackSheet_transparent_75: 1236926687
+      UIpackSheet_transparent_76: 237736055
+      UIpackSheet_transparent_77: 743617816
+      UIpackSheet_transparent_78: -1809116386
+      UIpackSheet_transparent_79: 918969631
+      UIpackSheet_transparent_8: 1394226177
+      UIpackSheet_transparent_80: -54051776
+      UIpackSheet_transparent_81: -284265224
+      UIpackSheet_transparent_82: 1658742856
+      UIpackSheet_transparent_83: 530197077
+      UIpackSheet_transparent_84: -1397375856
+      UIpackSheet_transparent_85: 1654455319
+      UIpackSheet_transparent_86: 2089361461
+      UIpackSheet_transparent_87: -1520475743
+      UIpackSheet_transparent_88: -1079925931
+      UIpackSheet_transparent_89: 1454272843
       UIpackSheet_transparent_9: -1404434142
-  spritePackingTag: 
+      UIpackSheet_transparent_90: 1252203917
+      UIpackSheet_transparent_91: 862703640
+      UIpackSheet_transparent_92: -1279138731
+      UIpackSheet_transparent_93: -1662586611
+      UIpackSheet_transparent_94: 262358340
+      UIpackSheet_transparent_95: -849117220
+      UIpackSheet_transparent_96: -1584187428
+      UIpackSheet_transparent_97: 1392956977
+      UIpackSheet_transparent_98: 1521609891
+      UIpackSheet_transparent_99: 448379769
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
   assetBundleName: 
