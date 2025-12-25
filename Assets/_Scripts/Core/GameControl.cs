@@ -24,7 +24,7 @@ public class GameControl : MonoBehaviour
 
     public static GameControl Instance { get; private set; }
 
-    public void Awake()
+    public void Init()
     {
         if(Instance != null && Instance != this) Destroy(this);
         else Instance = this;
@@ -59,7 +59,6 @@ public class GameControl : MonoBehaviour
         int chance = Random.Range(0, 100);
         if(chance <= 15) _waveSpawnCount += 2;
         else if(chance <= 85) _waveSpawnCount++;
-        // else if(chance <= 15 && _waveSpawnCount > 2) _waveSpawnCount -= 2;
         
         yield return new WaitForSeconds(Random.Range(_waveRateTime - 0.5f, _waveRateTime + 0.4f));
         StartCoroutine(SpawnWaves());

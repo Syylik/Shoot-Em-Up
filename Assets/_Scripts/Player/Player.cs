@@ -6,28 +6,23 @@ public class Player : MonoBehaviour
 {
     private Movement _playerMove;
     private Shoot _playerShoot;
-    private PlayerUI _playerUI;
     private PlayerHealth _playerHealth;
 
     private Input _input;
 
-    internal Animator _anim;
     
-    public void Init()
+    public void Init(Input input)
     {
-        _input = InputSystem.input;
+        _input = input;
         _playerMove = GetComponent<Movement>();
         _playerShoot = GetComponent<Shoot>();
         _playerHealth = GetComponent<PlayerHealth>();
-        _playerUI = GetComponent<PlayerUI>();
-        _anim = GetComponent<Animator>();
         
         _playerHealth.OnDie.AddListener(GameControl.Instance.Loose);
     }
 
     private void Start()
     {
-        Init();
         _input.Game.Fire.performed += context => _playerShoot.ShootState(true);
         _input.Game.Fire.canceled += context => _playerShoot.ShootState(false);
     }
