@@ -37,13 +37,7 @@ jobs:
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
           targetPlatform: WebGL
-          buildPath: build/WebGL
-          
-      - name: Prepare WebGL root
-        run: |
-          mkdir webRoot
-          cp -r build/WebGL/* webRoot
-          
+              
       - name: Deploy to webDemo branch
         uses: peaceiris/actions-gh-pages@v3
         with:
@@ -51,4 +45,3 @@ jobs:
           publish_dir: ./webRoot
           publish_branch: webDemo
           force_orphan: true
-
