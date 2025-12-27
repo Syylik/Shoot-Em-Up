@@ -42,6 +42,8 @@ public class Options : MonoBehaviour
         PlayerPrefs.Save();
     }
 
+    public void ToggleFullscreen(bool state) => Screen.fullScreen = state;
+
     public void SetFpsCounter(bool state) => _fpsCounter.SetActive(state);
 
     private float GetVolumeSave(string param)

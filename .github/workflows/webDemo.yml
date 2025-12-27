@@ -47,3 +47,9 @@ jobs:
         with:
           name: Build-WebGL
           path: build/
+
+      - name: Move build to docs
+        run: |
+          rm -rf docs
+          mkdir docs
+          cp -r build/WebGL/WebGL/* docs

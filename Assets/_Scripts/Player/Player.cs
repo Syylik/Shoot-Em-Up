@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -19,16 +20,24 @@ public class Player : MonoBehaviour
         _playerHealth = GetComponent<PlayerHealth>();
         
         _playerHealth.OnDie.AddListener(GameControl.Instance.Loose);
-    }
-
-    private void Start()
-    {
-        _input.Game.Fire.performed += context => _playerShoot.ShootState(true);
-        _input.Game.Fire.canceled += context => _playerShoot.ShootState(false);
+        
+        _input.Game.Fire.performed += StartShooting;
+        _input.Game.Fire.canceled  += StopShooting;
     }
 
     private void Update()
     {
         _playerMove.moveDirection = _input.Game.Move.ReadValue<Vector2>();
+    }
+
+    private void StartShooting(InputAction.CallbackContext context) => _playerShoot.ShootState(true);
+    private void StopShooting(InputAction.CallbackContext context) => _playerShoot.ShootState(false);
+
+    private void OnDisable()
+    {
+        _input.Game.Fire.performed -= StartShooting;
+        _input.Game.Fire.canceled  -= StopShooting;   
+
+        _playerHealth.OnDie.RemoveAllListeners();
     }
 }
