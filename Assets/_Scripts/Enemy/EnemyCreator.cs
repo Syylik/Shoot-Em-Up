@@ -1,7 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Pool;
+using Random = UnityEngine.Random;
 
 public class EnemyCreator : MonoBehaviour
 {
@@ -12,13 +13,17 @@ public class EnemyCreator : MonoBehaviour
     [SerializeField] private List<Transform> _spawnPoses;
 
     [SerializeField] private float _timeBtwSpawn;
-    private GameControl _enemyControl;
+    private WaveControl _enemyControl;
     private Pool<Enemy> _enemyPool;
 
-    private void Awake() 
+    private Action OnEnemySpawn, OnEnemyReduce;
+
+    private void Awake() => _enemyPool = new Pool<Enemy>(_enemyPrefab);
+
+    public void Init(Action onEnemySpawn, Action onEnemyReduce)
     {
-        _enemyControl = GameControl.Instance;
-        _enemyPool = new Pool<Enemy>(_enemyPrefab);
+        OnEnemySpawn = onEnemySpawn;
+        OnEnemyReduce = onEnemyReduce;
     }
 
     public void SpawnEnemies(int num) => StartCoroutine(SpawnEnemiesRoutine(num, _enemyPrefab));
@@ -55,10 +60,9 @@ public class EnemyCreator : MonoBehaviour
         var pos = new Vector2
             (afterSpawn.position.x + Random.Range(-0.5f, 0.5f),
             afterSpawn.position.y + Random.Range(6.5f, 10f));
-
+        Debug.Log("Enemy Created" + (enemyPrefab != null).ToString());
         var enemy = _enemyPool.Spawn(pos, _enemyPrefab.transform.rotation);
-        // var enemy = Instantiate(enemyPrefab, pos, _enemyPrefab.transform.rotation);
-        GameControl.Instance.AddEnemyCount();
-        enemy.Init(afterSpawn, _enemyControl, _enemyPool);
+        OnEnemySpawn?.Invoke();
+        enemy.Init(afterSpawn, OnEnemyReduce, _enemyPool);
     }
 }

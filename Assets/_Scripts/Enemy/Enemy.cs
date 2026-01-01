@@ -1,5 +1,7 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
+using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(Shoot), typeof(Health))]
 public class Enemy : MonoBehaviour, IPoolObject
@@ -13,7 +15,7 @@ public class Enemy : MonoBehaviour, IPoolObject
     [SerializeField] private EnemyHealth _health;
 
     private bool _isMovingToSpawn;
-    private GameControl _enemyControl;
+    private Action ReduceEnemyCount;
     private Pool<Enemy> _pool;
 
     private void Awake()
@@ -22,11 +24,11 @@ public class Enemy : MonoBehaviour, IPoolObject
         OnMoveToSpawnStart?.Invoke();
     }
 
-    public void Init(Transform afterSpawn, GameControl enemyControl, Pool<Enemy> pool)
+    public void Init(Transform afterSpawn, Action reduceEnemyCount, Pool<Enemy> pool)
     {
         _afterSpawnPoint = afterSpawn;
         _isMovingToSpawn = true;
-        _enemyControl = enemyControl;
+        ReduceEnemyCount = reduceEnemyCount;
         _pool = pool; 
         _health.OnDie.AddListener(OnDie);
         var shoot = GetComponent<Shoot>();
@@ -51,7 +53,7 @@ public class Enemy : MonoBehaviour, IPoolObject
 
     private void OnDie()
     {
-        _enemyControl.ReduceEnemyCount();
+        ReduceEnemyCount?.Invoke();
         _pool.Despawn(this);
     }
 
