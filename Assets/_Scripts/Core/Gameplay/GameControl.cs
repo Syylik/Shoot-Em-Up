@@ -1,3 +1,6 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -26,6 +29,12 @@ public class GameControl : MonoBehaviour
     public void Loose()
     {
         isLoosed = true;
+        StartCoroutine(TurnOnLosePanel());
+    }
+
+    private IEnumerator TurnOnLosePanel()
+    {
+        yield return new WaitForSeconds(2f);
         Time.timeScale = 0f;
         SetBlackPanel(true);
         _loosePanel.SetActive(true);

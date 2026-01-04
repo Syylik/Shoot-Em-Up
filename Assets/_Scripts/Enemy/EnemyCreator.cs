@@ -60,7 +60,6 @@ public class EnemyCreator : MonoBehaviour
         var pos = new Vector2
             (afterSpawn.position.x + Random.Range(-0.5f, 0.5f),
             afterSpawn.position.y + Random.Range(6.5f, 10f));
-        Debug.Log("Enemy Created" + (enemyPrefab != null).ToString());
         var enemy = _enemyPool.Spawn(pos, _enemyPrefab.transform.rotation);
         OnEnemySpawn?.Invoke();
         enemy.Init(afterSpawn, OnEnemyReduce, _enemyPool);
