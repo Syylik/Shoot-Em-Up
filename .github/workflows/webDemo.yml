@@ -11,6 +11,8 @@ on:
   pull_request:
     branches:
       - main
+permissions:
+  contents: write
 
 jobs:
   buildWebGL:
@@ -50,4 +52,13 @@ jobs:
           path: build/
 
       - name: Move build to docs
-        run: ls -R build/
+        run: |
+          ls
+          cp -r build/WebGL/WebGL/* docs/
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add docs/
+          git commit -m "Update docs"
+          git push
+
+
