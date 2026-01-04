@@ -7,6 +7,7 @@ on:
       - main
     paths-ignore:
       - '.github/workflows/**'
+      - 'docs/**'
   pull_request:
     branches:
       - main
@@ -49,7 +50,4 @@ jobs:
           path: build/
 
       - name: Move build to docs
-        run: |
-          rm -rf docs
-          mkdir docs
-          cp -r build/WebGL/WebGL/* docs
+        run: ls -R build/

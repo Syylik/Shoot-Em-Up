@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour, IPoolObject
 {
-    [SerializeField] private int _damage;
+    [HideInInspector] public float damage;
     [SerializeField] private GameObject _damageEffect;
 
     private readonly string _zoneTag = "DeadZone";
@@ -13,7 +13,7 @@ public class Bullet : MonoBehaviour, IPoolObject
     {
         if(collision.collider.TryGetComponent<Health>(out Health health))
         {
-            health.ChangeHealth(-_damage);
+            health.ChangeHealth(-damage);
             if(health.canTakeHit) Destroy(Instantiate(_damageEffect, transform.position, Quaternion.identity), 1.5f);
             Destroy(gameObject);
         }

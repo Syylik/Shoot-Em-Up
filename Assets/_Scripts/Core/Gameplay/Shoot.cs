@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class Shoot : MonoBehaviour
 {
-    [SerializeField] private float _bulletSpeed;
+    [SerializeField] private float _bulletSpeed = 6.5f;
+    [SerializeField] private float _bulletDamage = 1f;
     [SerializeField] private Bullet _bulletPrefab;
     [SerializeField] private Transform _bulletSpawn;
     [SerializeField] internal GameObject shootEffect;
@@ -41,6 +42,7 @@ public class Shoot : MonoBehaviour
     private void InstantiateBullet()
     {
         var bullet = GameControl.Instance.bulletPool.Spawn(_bulletSpawn.position, Quaternion.identity);
+        bullet.damage = _bulletDamage;
         bullet.SetOwnerLayer(gameObject.layer);
         bullet.GetComponent<Movement>().Init(_bulletSpeed, transform.up);
     }

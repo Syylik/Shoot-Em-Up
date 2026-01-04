@@ -12,19 +12,10 @@ public class EnemyCreator : MonoBehaviour
     [SerializeField] private Transform _bossSpawnPos;
     [SerializeField] private List<Transform> _spawnPoses;
 
-    [SerializeField] private float _timeBtwSpawn;
-    private WaveControl _enemyControl;
+    [SerializeField] private float _timeBtwSpawn = 0.25f;
     private Pool<Enemy> _enemyPool;
 
-    private Action OnEnemySpawn, OnEnemyReduce;
-
     private void Awake() => _enemyPool = new Pool<Enemy>(_enemyPrefab);
-
-    public void Init(Action onEnemySpawn, Action onEnemyReduce)
-    {
-        OnEnemySpawn = onEnemySpawn;
-        OnEnemyReduce = onEnemyReduce;
-    }
 
     public void SpawnEnemies(int num) => StartCoroutine(SpawnEnemiesRoutine(num, _enemyPrefab));
     public void SpawnBoss() => StartCoroutine(SpawnEnemiesRoutine(1, _bossPrefab, _bossSpawnPos));
@@ -61,7 +52,6 @@ public class EnemyCreator : MonoBehaviour
             (afterSpawn.position.x + Random.Range(-0.5f, 0.5f),
             afterSpawn.position.y + Random.Range(6.5f, 10f));
         var enemy = _enemyPool.Spawn(pos, _enemyPrefab.transform.rotation);
-        OnEnemySpawn?.Invoke();
-        enemy.Init(afterSpawn, OnEnemyReduce, _enemyPool);
+        enemy.Init(afterSpawn, _enemyPool);
     }
 }

@@ -7,19 +7,10 @@ public class WaveControl : MonoBehaviour
 {
     private int wave;
     [SerializeField] private TMP_Text _waveText;
-    [SerializeField] private int _waveSpawnCount;
-    [SerializeField] private float _waveRateTime;
-    private int enemyCount;
+    [SerializeField] private int _waveSpawnCount = 2;
+    [SerializeField, Min(0.5f)] private float _waveRateTime = 0.5f;
 
-    public void AddEnemyCount() => enemyCount++;     // On Enemy Spawn
-
-    public void ReduceEnemyCount() => enemyCount--;  // On Enemy Death
-
-    public void StartWaves(EnemyCreator enemyCreator)
-    {
-        enemyCreator.Init(AddEnemyCount, ReduceEnemyCount);
-        StartCoroutine(SpawnWaves(enemyCreator));
-    }
+    public void StartWaves(EnemyCreator enemyCreator) => StartCoroutine(SpawnWaves(enemyCreator));
 
     private IEnumerator SpawnWaves(EnemyCreator enemyCreator)
     {
@@ -27,17 +18,16 @@ public class WaveControl : MonoBehaviour
 
         wave++;
         _waveText.text = wave.ToString();
-        var spawnCount = Random.Range(_waveSpawnCount - 1, _waveSpawnCount + 1);
-        if(spawnCount <= 0) spawnCount = 1;
-        enemyCreator.SpawnEnemies(spawnCount);
+        
+        enemyCreator.SpawnEnemies(_waveSpawnCount);
 
-        while(enemyCount > 0) yield return null;
+        while(Registry<Enemy>.Count > 0) yield return null;
 
         int chance = Random.Range(0, 100);
-        if(chance <= 15) _waveSpawnCount += 2;
-        else if(chance <= 85) _waveSpawnCount++;
+        if(chance <= 20) _waveSpawnCount += 2;
+        else _waveSpawnCount++;
         
-        yield return new WaitForSeconds(Random.Range(_waveRateTime - 0.5f, _waveRateTime + 0.4f));
+        yield return new WaitForSeconds(Random.Range(_waveRateTime - 0.42f, _waveRateTime + 0.42f));
         StartCoroutine(SpawnWaves(enemyCreator));
     }
 }

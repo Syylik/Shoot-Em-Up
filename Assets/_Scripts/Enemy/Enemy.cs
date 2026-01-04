@@ -15,7 +15,6 @@ public class Enemy : MonoBehaviour, IPoolObject
     [SerializeField] private EnemyHealth _health;
 
     private bool _isMovingToSpawn;
-    private Action ReduceEnemyCount;
     private Pool<Enemy> _pool;
 
     private void Awake()
@@ -24,14 +23,17 @@ public class Enemy : MonoBehaviour, IPoolObject
         OnMoveToSpawnStart?.Invoke();
     }
 
-    public void Init(Transform afterSpawn, Action reduceEnemyCount, Pool<Enemy> pool)
+    public void Init(Transform afterSpawn, Pool<Enemy> pool)
     {
         _afterSpawnPoint = afterSpawn;
         _isMovingToSpawn = true;
-        ReduceEnemyCount = reduceEnemyCount;
         _pool = pool; 
+
+        Registry<Enemy>.TryAdd(this);
         _health.OnDie.AddListener(OnDie);
+        
         var shoot = GetComponent<Shoot>();
+        _speed = _speed + Random.Range(-0.15f, 1.2f);
         shoot.shootTime = shoot.shootTime + Random.Range(-0.15f, 0.65f);
         OnMoveToSpawnStart?.Invoke();
     }
@@ -53,7 +55,7 @@ public class Enemy : MonoBehaviour, IPoolObject
 
     private void OnDie()
     {
-        ReduceEnemyCount?.Invoke();
+        Registry<Enemy>.Remove(this);
         _pool.Despawn(this);
     }
 

@@ -509,7 +509,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -861330012, guid: d045cede03da7ad488f7100268f5c788, type: 3}
+  m_Sprite: {fileID: -530221091, guid: d045cede03da7ad488f7100268f5c788, type: 3}
   m_Color: {r: 0.1509434, g: 0.15008901, b: 0.15008901, a: 0.2}
   m_FlipX: 0
   m_FlipY: 0
@@ -624,7 +624,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: -861330012, guid: d045cede03da7ad488f7100268f5c788, type: 3}
+  m_Sprite: {fileID: -530221091, guid: d045cede03da7ad488f7100268f5c788, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -650,7 +650,7 @@ GameObject:
   - component: {fileID: 8053547833770489866}
   - component: {fileID: 8053547833770489877}
   m_Layer: 7
-  m_Name: Enemy
+  m_Name: MiniBoss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -666,7 +666,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -1, w: 0.00000010430811}
   m_LocalPosition: {x: 0, y: 2, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8053547833420104572}
@@ -689,7 +689,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f6905a4b57f7a645ac44e4a2108bc00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 2.5
+  _speed: 1
   _afterSpawnPoint: {fileID: 0}
   OnMoveToSpawnStart:
     m_PersistentCalls:
@@ -758,13 +758,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3373958c8ed8e6c4b8fc20906201be38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bulletSpeed: 6.5
-  _bulletDamage: 1
+  _bulletSpeed: 7.2
+  _bulletDamage: 3
   _bulletPrefab: {fileID: 6160494507107684636, guid: cb04e1a26faaf3e4fa0e4f613eb2e121, type: 3}
   _bulletSpawn: {fileID: 8053547832805466324}
   shootEffect: {fileID: 7256329935263012044, guid: 1e4cc4cf414daeb439339ba80ab8728e, type: 3}
   shootSound: {fileID: 412785059931327744}
-  _shootCooldown: 1.25
+  _shootCooldown: 2
   isShooting: 1
 --- !u!114 &8053547833770489868
 MonoBehaviour:
@@ -778,8 +778,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45853408682b4f3409634a6bd43019be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 2
-  maxHealth: 2
+  health: 8
+  maxHealth: 8
   dieEffect: {fileID: 3065213586826867644, guid: ba0dcd08733decf4bafb9577f50d562f, type: 3}
   damageSound: {fileID: 1915799990607788062}
   dieSound: {fileID: 1523735727828152494}
