@@ -1,4 +1,4 @@
-name: Build WebGL
+name: Build to WebGL
 
 on:
   workflow_dispatch:
@@ -45,11 +45,14 @@ jobs:
         with:
           targetPlatform: WebGL
 
-      - name: Upload WebGL artifact
+      - name: Get build date
+        run: echo "BUILD_DATA=$(date +'%d-%m/%H:%M')" >> $GITHUB_ENV
+
+      - name: Upload Build artifact
         uses: actions/upload-artifact@v4
         with:
-          name: Build-WebGL
-          path: build/
+          name: Build-WebGL-${{ env.BUILD_DATE }}
+          path: build/WebGL
 
       - name: Move build to docs
         run: |

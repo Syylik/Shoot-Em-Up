@@ -17,28 +17,35 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
           lfs: true
-
-      - uses: actions/cache@v3
+      - name: Cache Unity Library
+        uses: actions/cache@v3
         with:
           path: Library
           key: Library-Android
-          restore-keys: Library-
+          restore-keys: Library-Android
+      
+      - name: Free disk space
+        uses: jlumbroso/free-disk-space@v1.3.1
 
-      - uses: jlumbroso/free-disk-space@v1.3.1
-
-      - uses: game-ci/unity-builder@v4
+      - name: Build Android
+        uses: game-ci/unity-builder@v4
         env:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
           UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
           targetPlatform: Android
+      
+      - name: Get build date
+        run: echo "BUILD_DATA=$(date +'%d-%m/%H:%M')" >> $GITHUB_ENV
 
-      - uses: actions/upload-artifact@v4
+      - name: Upload Build artifact
+        uses: actions/upload-artifact@v4
         with:
-          name: Build-Android
+          name: Build-Android-${{ env.BUILD_DATE }}
           path: build/Android
