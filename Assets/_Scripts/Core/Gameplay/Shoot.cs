@@ -42,6 +42,7 @@ public class Shoot : MonoBehaviour
     private void InstantiateBullet()
     {
         var bullet = GameControl.Instance.bulletPool.Spawn(_bulletSpawn.position, Quaternion.identity);
+        if(bullet == null) Debug.Log("Null bullet from pool");
         bullet.damage = _bulletDamage;
         bullet.SetOwnerLayer(gameObject.layer);
         bullet.GetComponent<Movement>().Init(_bulletSpeed, transform.up);

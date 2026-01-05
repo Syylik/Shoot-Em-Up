@@ -1,7 +1,4 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 
 public class GameControl : MonoBehaviour
@@ -21,8 +18,10 @@ public class GameControl : MonoBehaviour
         if(Instance != null && Instance != this) Destroy(this);
         else Instance = this;
         
+        Pause.Instance.Off();
         QualitySettings.vSyncCount = 0;
         Application.targetFrameRate = 120;
+
         bulletPool = new Pool<Bullet>(_bulletPrefab, 32);
     }
 

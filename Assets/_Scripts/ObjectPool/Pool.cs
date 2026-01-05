@@ -26,10 +26,13 @@ public class Pool<T> where T : MonoBehaviour, IPoolObject
         if(_pool.Count > 0)
         {
             T newObject = _pool.Pop();
-            newObject.Enable(position, rotation);
-            return newObject;
+            if(newObject != null)
+            {
+                newObject.Enable(position, rotation);
+                return newObject;
+            }
         }
-        else return Object.Instantiate(_tPrefab, position, rotation);
+        return Object.Instantiate(_tPrefab, position, rotation);
     }
 
     /// <summary>

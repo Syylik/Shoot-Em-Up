@@ -1,8 +1,6 @@
-using UnityEngine;
-
 public class Pause
 {
-    internal bool isPaused { get; private set; }
+    public bool isPaused { get; private set; }
 
     private static Pause _instance;
     public static Pause Instance
@@ -14,7 +12,7 @@ public class Pause
         }
     }
 
-    public bool TogglePause()
+    public bool Toggle()
     {
         if(GameControl.Instance == null || GameControl.Instance.isLoosed) return false;
 
@@ -25,5 +23,17 @@ public class Pause
 
         GameControl.Instance.SetBlackPanel(isPaused);
         return isPaused;
+    }
+
+    public void On()
+    {
+        if(isPaused) return;
+        Toggle();
+    }
+
+    public void Off()
+    {
+        if(!isPaused) return;
+        Toggle();
     }
 }

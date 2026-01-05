@@ -1,12 +1,10 @@
-using System;
 using UnityEngine;
 using UnityEngine.Events;
-using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(Shoot), typeof(Health))]
-public class Enemy : MonoBehaviour, IPoolObject
+public abstract class Enemy : MonoBehaviour, IPoolObject
 {
-    [SerializeField] private float _speed;
+    [SerializeField] protected float _speed;
     [SerializeField] private Transform _afterSpawnPoint;
 
     public UnityEvent OnMoveToSpawnStart;
@@ -15,7 +13,6 @@ public class Enemy : MonoBehaviour, IPoolObject
     [SerializeField] private EnemyHealth _health;
 
     private bool _isMovingToSpawn;
-    private Pool<Enemy> _pool;
 
     private void Awake()
     {
@@ -23,18 +20,14 @@ public class Enemy : MonoBehaviour, IPoolObject
         OnMoveToSpawnStart?.Invoke();
     }
 
-    public void Init(Transform afterSpawn, Pool<Enemy> pool)
+    public void Init(Transform afterSpawn)
     {
         _afterSpawnPoint = afterSpawn;
         _isMovingToSpawn = true;
-        _pool = pool; 
-
+        
         Registry<Enemy>.TryAdd(this);
         _health.OnDie.AddListener(OnDie);
         
-        var shoot = GetComponent<Shoot>();
-        _speed = _speed + Random.Range(-0.15f, 1.2f);
-        shoot.shootTime = shoot.shootTime + Random.Range(-0.15f, 0.65f);
         OnMoveToSpawnStart?.Invoke();
     }
 
@@ -53,11 +46,7 @@ public class Enemy : MonoBehaviour, IPoolObject
         }
     }
 
-    private void OnDie()
-    {
-        Registry<Enemy>.Remove(this);
-        _pool.Despawn(this);
-    }
+    protected virtual void OnDie() => Registry<Enemy>.Remove(this);
 
     public void Enable(Vector2 position, Quaternion rotation)
     {
@@ -68,8 +57,7 @@ public class Enemy : MonoBehaviour, IPoolObject
         gameObject.SetActive(true);
     }
 
-    public void Disable()
-    {
-        gameObject.SetActive(false);
-    }
+    public void Disable() => gameObject.SetActive(false);
+
+    private void OnDestroy() => Registry<Enemy>.Remove(this);
 }

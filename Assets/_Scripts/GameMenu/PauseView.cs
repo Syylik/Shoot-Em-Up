@@ -8,6 +8,6 @@ public class PauseView : MonoBehaviour
 
     public void TogglePause()
     {
-        _pausePanel.SetActive(Pause.Instance.TogglePause());
+        _pausePanel.SetActive(Pause.Instance.Toggle());
     }
 }

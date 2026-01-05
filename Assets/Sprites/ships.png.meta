@@ -149,7 +149,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ships_0
+      name: player_ship
       rect:
         serializedVersion: 2
         x: 0
@@ -179,7 +179,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ships_1
+      name: boss_ship_3
       rect:
         serializedVersion: 2
         x: 34
@@ -211,7 +211,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ships_2
+      name: boss_ship_2
       rect:
         serializedVersion: 2
         x: 66
@@ -243,7 +243,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ships_3
+      name: boss_ship_1
       rect:
         serializedVersion: 2
         x: 99
@@ -273,7 +273,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ships_4
+      name: miniboss_ship_4
       rect:
         serializedVersion: 2
         x: 4
@@ -294,7 +294,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ships_5
+      name: miniboss_ship_3
       rect:
         serializedVersion: 2
         x: 34
@@ -315,7 +315,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ships_6
+      name: minion_ship_4
       rect:
         serializedVersion: 2
         x: 71
@@ -336,7 +336,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ships_7
+      name: miniboss_ship_2
       rect:
         serializedVersion: 2
         x: 101
@@ -357,7 +357,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ships_8
+      name: miniboss_ship_1
       rect:
         serializedVersion: 2
         x: 3
@@ -378,7 +378,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ships_9
+      name: minion_ship_1
       rect:
         serializedVersion: 2
         x: 37
@@ -399,7 +399,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ships_10
+      name: minion_ship_2
       rect:
         serializedVersion: 2
         x: 72
@@ -420,7 +420,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ships_11
+      name: minion_ship_3
       rect:
         serializedVersion: 2
         x: 103
@@ -703,10 +703,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      ships_0: -1625067099
-      ships_1: -1242806488
-      ships_10: 623696865
-      ships_11: 1869384737
+      boss_ship_1: -1354640257
+      boss_ship_2: 1308484849
+      boss_ship_3: -1242806488
+      miniboss_ship_1: 2066453598
+      miniboss_ship_2: -530221091
+      miniboss_ship_3: 217322366
+      miniboss_ship_4: 1898393425
+      minion_ship_1: 357489530
+      minion_ship_2: 623696865
+      minion_ship_3: 1869384737
+      minion_ship_4: -861330012
+      player_ship: -1625067099
       ships_12: 646715963
       ships_13: -1291743666
       ships_14: -1894472431
@@ -715,18 +723,10 @@ TextureImporter:
       ships_17: -2044632438
       ships_18: 1940235432
       ships_19: 781657232
-      ships_2: 1308484849
       ships_20: 58513820
       ships_21: 961844393
       ships_22: 758505391
       ships_23: 1302001811
-      ships_3: -1354640257
-      ships_4: 1898393425
-      ships_5: 217322366
-      ships_6: -861330012
-      ships_7: -530221091
-      ships_8: 2066453598
-      ships_9: 357489530
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

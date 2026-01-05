@@ -28,7 +28,7 @@ public class Bullet : MonoBehaviour, IPoolObject
     {
         transform.position = position;
         transform.rotation = rotation;
-        gameObject.SetActive(true);
+        if(gameObject != null) gameObject.SetActive(true);
     }
 
     public void Disable()

@@ -650,7 +650,7 @@ GameObject:
   - component: {fileID: 8053547833770489866}
   - component: {fileID: 8053547833770489877}
   m_Layer: 7
-  m_Name: Enemy
+  m_Name: Minion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -686,7 +686,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8053547833770489876}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f6905a4b57f7a645ac44e4a2108bc00, type: 3}
+  m_Script: {fileID: 11500000, guid: 51e3772edaffe7e0f9be15c5cf91d63c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 2.5
@@ -823,7 +823,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.35
+  m_Radius: 0.32
 --- !u!95 &8053547833770489877
 Animator:
   serializedVersion: 5
