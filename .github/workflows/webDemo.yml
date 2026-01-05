@@ -46,7 +46,7 @@ jobs:
           targetPlatform: WebGL
 
       - name: Get build date
-        run: echo "BUILD_DATE=$(date +'%d-%m/%H:%M')" >> $GITHUB_ENV
+        run: echo "BUILD_DATE=$(date +'%d-%m_%H-%M')" >> $GITHUB_ENV
 
       - name: Upload Build artifact
         uses: actions/upload-artifact@v4
