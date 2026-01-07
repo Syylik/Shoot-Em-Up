@@ -22,12 +22,16 @@ jobs:
         with:
           fetch-depth: 0
           lfs: true
+      
       - name: Cache Unity Library
         uses: actions/cache@v3
         with:
           path: Library
           key: Library-Android
           restore-keys: Library-Android
+
+      - name: Free disk space
+        uses: jlumbroso/free-disk-space@v1.3.1
 
       - name: Build Android
         uses: game-ci/unity-builder@v4
